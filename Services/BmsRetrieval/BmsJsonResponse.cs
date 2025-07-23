@@ -146,7 +146,7 @@ public class BmsDateTimeConverter
                 out var result
             ))
         {
-            return result.DateTime.ToUniversalTime();
+            return result.UtcDateTime;
         }
 
         throw new JsonException(
