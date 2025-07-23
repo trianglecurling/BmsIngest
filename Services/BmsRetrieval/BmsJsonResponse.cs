@@ -77,7 +77,7 @@ public class BmsJsonResponse
             SheetDFarHogLineIceSensor = SheetDFarHogLine.ToIceSensorInformation(),
             ChillerInformation = new ChillerInformation()
             {
-                ChillerRunning = ChillerRunning.Data > 0,
+                ChillerLoad = ChillerRunning.Data,
                 ChillerSetPoint = ChillerSetPoint.ToTemperatureInformation(),
                 ChillerGlycolEnterTemp = ChillerGlycolEnterTemp.ToTemperatureInformation(),
                 ChillerGlycolExitTemp = ChillerGlycolExitTemp.ToTemperatureInformation()

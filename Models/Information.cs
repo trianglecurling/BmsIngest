@@ -222,11 +222,10 @@ public struct AirSensorInformation
 public struct ChillerInformation
 {
     /// <summary>
-    /// If the chiller is running or not
-    /// Unclear if this is just "enabled", or actually in a cool call/compressor running
+    /// What load the chiller is running at - expressed as a percentage, 0-100
     /// </summary>
     [PublicAPI]
-    public bool ChillerRunning { get; init; }
+    public double ChillerLoad { get; init; }
     
     /// <summary>
     /// Set point of the chiller

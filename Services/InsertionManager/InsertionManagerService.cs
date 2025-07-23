@@ -44,7 +44,7 @@ public class InsertionManagerService : IInsertionManagerService
     private const string FIELD_TEMPERATURE_SET_POINT = "SetPointTemperature";
     private const string FIELD_TEMPERATURE_INLET = "InletTemperature";
     private const string FIELD_TEMPERATURE_OUTLET = "OutletTemperature";
-    private const string FIELD_CHILLER_OPERATING = "Operating";
+    private const string FIELD_CHILLER_LOAD = "Load";
     #endregion
     
     #endregion
@@ -131,7 +131,7 @@ public class InsertionManagerService : IInsertionManagerService
         // Chiller Information
         yield return PointData.Measurement(MEASUREMENT_CHILLER_INFORMATION)
                               .AddTimestamp(information)
-                              .Field(FIELD_CHILLER_OPERATING, information.ChillerInformation.ChillerRunning)
+                              .Field(FIELD_CHILLER_LOAD, information.ChillerInformation.ChillerLoad)
                               .Field(FIELD_TEMPERATURE_SET_POINT,
                                   information.ChillerInformation.ChillerSetPoint.ValueFahrenheit)
                               .Field(FIELD_TEMPERATURE_INLET,
