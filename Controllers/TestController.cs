@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BmsIngest.Controllers;
 
-[Route("api/TestController")]
+[Route("api/Test")]
 [ApiController]
 public class TestController : ControllerBase
 {
