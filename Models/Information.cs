@@ -225,24 +225,33 @@ public struct ChillerInformation
     /// What load the chiller is running at - expressed as a percentage, 0-100
     /// </summary>
     [PublicAPI]
-    public double ChillerLoad { get; init; }
+    public double Load { get; init; }
     
     /// <summary>
     /// Set point of the chiller
     /// </summary>
     [PublicAPI]
-    public TemperatureInformation ChillerSetPoint { get; init; }
+    public TemperatureInformation SetPoint { get; init; }
     
     /// <summary>
     /// Temperature of the glycol at the chiller inlet
     /// </summary>
     [PublicAPI]
-    public TemperatureInformation ChillerGlycolEnterTemp { get; init; }
+    public TemperatureInformation GlycolEnterTemp { get; init; }
     
     /// <summary>
     /// Temperature of the glycol at the chiller outlet
     /// </summary>
     [PublicAPI]
-    public TemperatureInformation ChillerGlycolExitTemp { get; init; }
+    public TemperatureInformation GlycolExitTemp { get; init; }
+    
+    
+    /// <summary>
+    /// Process value the chiller is using for control
+    /// This is the ice temp the chiller is currently using
+    /// Selectable between min/mean/max on the chiller side
+    /// </summary>
+    [PublicAPI]
+    public TemperatureInformation ProcessValue { get; init; }
 
 }

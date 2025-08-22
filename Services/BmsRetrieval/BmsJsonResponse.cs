@@ -56,6 +56,10 @@ public class BmsJsonResponse
     [JsonPropertyName("outdoorTemp")]
     public DoubleData OutdoorTemp { get; init; }
 
+
+    [JsonPropertyName("iceTempInUse")]
+    public DoubleData ChillerIceTempInUse { get; init; }
+
     /// <summary>
     /// Convert to internal Information structure
     /// </summary>
@@ -77,10 +81,11 @@ public class BmsJsonResponse
             SheetDFarHogLineIceSensor = SheetDFarHogLine.ToIceSensorInformation(),
             ChillerInformation = new ChillerInformation()
             {
-                ChillerLoad = ChillerRunning.Data,
-                ChillerSetPoint = ChillerSetPoint.ToTemperatureInformation(),
-                ChillerGlycolEnterTemp = ChillerGlycolEnterTemp.ToTemperatureInformation(),
-                ChillerGlycolExitTemp = ChillerGlycolExitTemp.ToTemperatureInformation()
+                Load = ChillerRunning.Data,
+                SetPoint = ChillerSetPoint.ToTemperatureInformation(),
+                GlycolEnterTemp = ChillerGlycolEnterTemp.ToTemperatureInformation(),
+                GlycolExitTemp = ChillerGlycolExitTemp.ToTemperatureInformation(),
+                ProcessValue = ChillerIceTempInUse.ToTemperatureInformation()
             },
             OutdoorTemperature = OutdoorTemp.ToTemperatureInformation()
         };
