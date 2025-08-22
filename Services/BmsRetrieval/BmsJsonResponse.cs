@@ -17,42 +17,52 @@ public class BmsJsonResponse
     [JsonPropertyName("timestamp")]
     [JsonConverter(typeof(BmsDateTimeConverter))]
     public DateTime Timestamp { get; init; }
-        
+
+
     [JsonPropertyName("sheet_A_NearHogLine")]
     public DoubleData SheetANearHogLine { get; init; }
-        
+
+
     [JsonPropertyName("sheet_D_NearHogLine")]
     public DoubleData SheetDNearHogLine { get; init; }
-        
+
+
     [JsonPropertyName("sheet_A_FarHogLine")]
     public DoubleData SheetAFarHogLine { get; init; }
-        
+
+
     [JsonPropertyName("sheet_D_FarHogLine")]
     public DoubleData SheetDFarHogLine { get; init; }
-        
+
+
     [JsonPropertyName("iceShedAirTemp")]
     public DoubleData IceShedAirTemp { get; init; }
-        
+
+
     [JsonPropertyName("iceShedRH")]
     public DoubleData IceShedRelativeHumidity { get; init; }
-        
+
+
     [JsonPropertyName("iceShedDewPoint")]
     public DoubleData IceShedDewPoint { get; init; }
-    
-    
+
+
     [JsonPropertyName("%ChillerRunning")]
     public DoubleData ChillerRunning { get; init; }
-    
+
+
     [JsonPropertyName("chillerGlycolEnterTemp")]
     public DoubleData ChillerGlycolEnterTemp { get; init; }
-    
-    
+
+
     [JsonPropertyName("chillerGlycolExitTemp")]
     public DoubleData ChillerGlycolExitTemp { get; init; }
-    
+
+
     [JsonPropertyName("chillerSetPoint")]
     public DoubleData ChillerSetPoint { get; init; }
-    
+
+
     [JsonPropertyName("outdoorTemp")]
     public DoubleData OutdoorTemp { get; init; }
 
