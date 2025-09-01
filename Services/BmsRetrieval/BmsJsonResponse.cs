@@ -69,6 +69,9 @@ public class BmsJsonResponse
 
     [JsonPropertyName("iceTempInUse")]
     public DoubleData ChillerIceTempInUse { get; init; }
+    
+    [JsonPropertyName("dehumOnOff")]
+    public BoolData DehumidifierRunning { get; init; }
 
     /// <summary>
     /// Convert to internal Information structure
@@ -97,9 +100,17 @@ public class BmsJsonResponse
                 GlycolExitTemp = ChillerGlycolExitTemp.ToTemperatureInformation(),
                 ProcessValue = ChillerIceTempInUse.ToTemperatureInformation()
             },
-            OutdoorTemperature = OutdoorTemp.ToTemperatureInformation()
+            OutdoorTemperature = OutdoorTemp.ToTemperatureInformation(),
+            DehumidifierRunning = DehumidifierRunning.Data
         };
     }
+}
+
+public readonly struct BoolData
+{
+    [JsonPropertyName("out")]
+    [UsedImplicitly]
+    public bool Data { get; init; }
 }
 
 /// <summary>

@@ -63,6 +63,12 @@ public readonly struct Information
     /// </summary>
     [PublicAPI]
     public TemperatureInformation OutdoorTemperature { get; init; }
+    
+    /// <summary>
+    /// If the dehumidifier is running or not
+    /// </summary>
+    [PublicAPI]
+    public bool DehumidifierRunning { get; init; }
 }
 
 /// <summary>

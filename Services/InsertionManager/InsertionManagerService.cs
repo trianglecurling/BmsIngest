@@ -20,6 +20,7 @@ public class InsertionManagerService : IInsertionManagerService
     private const string MEASUREMENT_AIR_SENSOR = "AirSensor";
     private const string MEASUREMENT_TEMPERATURE_SENSOR = "TemperatureSensor";
     private const string MEASUREMENT_CHILLER_INFORMATION = "ChillerInformation";
+    private const string MEASUREMENT_DEHUMIDIFIER_INFORMATION = "DehumidifierInformation";
     #endregion
     
     #region Tags
@@ -46,6 +47,7 @@ public class InsertionManagerService : IInsertionManagerService
     private const string FIELD_TEMPERATURE_OUTLET = "OutletTemperature";
     private const string FIELD_CHILLER_LOAD = "Load";
     private const string FIELD_TEMPERATURE_PROCESS_VALUE = "ProcessValueTemperature";
+    private const string FIELD_DEHUMIDIFIER_RUNNING = "Running";
     #endregion
     
     #endregion
@@ -142,6 +144,12 @@ public class InsertionManagerService : IInsertionManagerService
                                   information.ChillerInformation.GlycolExitTemp.ValueFahrenheit)
                               .Field(FIELD_TEMPERATURE_PROCESS_VALUE,
                                   information.ChillerInformation.ProcessValue.ValueFahrenheit);
+
+        // Dehumidifier Information
+        yield return PointData.Measurement(MEASUREMENT_DEHUMIDIFIER_INFORMATION)
+                              .AddTimestamp(information)
+                              .Field(FIELD_DEHUMIDIFIER_RUNNING,
+                                  information.DehumidifierRunning);
     }
     
 }
